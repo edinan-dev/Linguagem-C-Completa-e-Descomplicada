@@ -15,7 +15,7 @@ int main(){
     int soma, contador;
 
     soma = A[0] + A[1] + A[5];
-    printf("A soma de %d, %d e %d\n",A[0], A[1], A[5]);
+    printf("A soma de %d, %d e %d e: %d\n",A[0], A[1], A[5], soma);
 
     A[4] = 100;
 
