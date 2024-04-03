@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "c:/Users/edina/OneDrive/Documentos/Exercícios Liguagem C Completa e Descomplicada/Capítulo 5_Comandos de Repetição",
-      "program": "c:/Users/edina/OneDrive/Documentos/Exercícios Liguagem C Completa e Descomplicada/Capítulo 5_Comandos de Repetição/build/Debug/outDebug",
+      "cwd": ".",
+      "program": "build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
