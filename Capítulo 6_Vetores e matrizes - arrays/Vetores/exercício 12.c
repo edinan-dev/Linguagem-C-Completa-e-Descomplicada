@@ -7,6 +7,7 @@ Verifique se existe valores iguais e os escreva na tela.*/
 int main(){
     
     int vetor[10], contador, controle = 0, repeat;
+    int repeated[10];
 
     for(contador = 0; contador < 10; contador++) {
         printf("Digite um valor para vetor[%d]: ",contador);
