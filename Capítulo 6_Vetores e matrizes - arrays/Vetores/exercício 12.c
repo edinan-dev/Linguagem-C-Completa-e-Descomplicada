@@ -4,29 +4,48 @@ Verifique se existe valores iguais e os escreva na tela.*/
 #include <stdio.h>
 #include <stdlib.h>
 
-int main(){
-    
-    int vetor[10], contador, controle = 0, repeat;
-    int repeated[10];
 
-    for(contador = 0; contador < 10; contador++) {
-        printf("Digite um valor para vetor[%d]: ",contador);
-        scanf("%d",&vetor[contador]);
+int main(){
+
+    int vetor[10], repetidos[10];
+    int i, x, y, z;
+    int repetido, contador = 0;
+
+    //Ler os valores do vetor//
+    for(i = 0; i < 10; i++) {
+        printf("Digite o valor de vetor[%d]: ",i);
+        scanf("%d",&vetor[i]);
     }
 
-    while( controle < 10) {
+    //Comparar o valores//
+    for(x = 0; x < 10; x++) {
+        for(y = x +1; y < 11; y++) {
+            if(vetor[x] == vetor[y]) {
+                
+                //Testar se o valor já foi repetido//
+                repetido = 0;
+                for(z = 0; z < contador; z++) {
+                    if(vetor[x] == repetidos[z]) {
+                        repetido = 1;
+                        break;
+                    }
+                }
 
-        for(contador = 0, repeat = 0; contador < 10; contador++) {
-            if(vetor[controle] == vetor[contador]) {
-                repeat++;
+                //Adicionar se não foi repetido//
+                if(repetido == 0) {
+                    repetidos[contador] = vetor[x];
+                        contador++;
+                }
             }
         }
-        if(repeat > 1) {
-            printf("%d aparece %d vezes\n",vetor[controle], repeat);
-        }
-        controle++;
     }
-    
+
+
+    printf("Os valores repetido sao:\n");
+    for(i = 1; i < contador; i++) {
+        printf("%d\n",repetidos[i]);
+    }
+
     system("pause");
     return 0;
 }
