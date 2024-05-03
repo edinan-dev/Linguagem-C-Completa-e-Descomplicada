@@ -13,7 +13,7 @@ Deverá gerá o vetor 31 4 32*/
 
 int main(){
 
-    int matriz[3][3], vetor[3];
+    int matriz[3][3], vetor[3] = {0, 0 , 0};
     int i, j;
 
     //Ler os números da matriz//
@@ -25,8 +25,8 @@ int main(){
     }
 
     //Somar as colunas e armazenar a soma no vetor//
-    for(i = 0; i < 3; i++){
-        for(j = 0; j < 3; j++){
+    for(i = 0; i < 3; i++) {
+        for(j = 0; j < 3; j++) {
             if(j == 0) {
                 vetor[0] = vetor[0] + matriz[i][j];
             } else {
@@ -36,7 +36,7 @@ int main(){
                     if(j == 2) {
                         vetor[2] = vetor[2] + matriz[i][j];
                     } else {
-                        printf("Error\n");
+                        printf("ERROR\n");
                     }
                 }
             }
@@ -52,6 +52,7 @@ int main(){
         printf("\n");
     }
 
+    //Imprimir na tela a soma dos termos nas colunas//
     for(i = 0; i < 3; i++) {
         printf("A soma da coluna %d, e : %d\n",i, vetor[i]);
     }
