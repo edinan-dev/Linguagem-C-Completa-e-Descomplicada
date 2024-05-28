@@ -8,9 +8,8 @@ cuja pior nota foi na prova 3.*/
 
 int main(){
 
-    int matriz_notas[10][3], vetor[3] = {0 , 0, 0};
+    int matriz_notas[10][3], vetor[3];
     int i, j;
-    int pior_nota_1, pior_nota_2, pior_nota_3;
    
 
     //Ler os números da matriz//
@@ -20,39 +19,6 @@ int main(){
             scanf("%d",&matriz_notas[i][j]);
         }
     }
-
-    //Calcular a pior de cada prova//
-    pior_nota_1 = matriz_notas[0][0];
-    pior_nota_2 = matriz_notas[0][1];
-    pior_nota_3 = matriz_notas[0][2];
-
-    for(i = 0; i < 10; i++) {
-        for(j = 0; j < 3; j++) {
-            if(j == 0) {
-                if(matriz_notas[i][j] < pior_nota_1) {
-                    pior_nota_1 = matriz_notas[i][j];
-                    vetor[0] = i;
-                }
-            } else {
-                if(j == 1) {
-                    if (matriz_notas[i][j] < pior_nota_2) {
-                        pior_nota_2 = matriz_notas[i][j];
-                        vetor[1] = i;
-                    }
-                } else {
-                    if(j == 2) {
-                        if(matriz_notas[i][j] < pior_nota_3) {
-                            pior_nota_3 = matriz_notas[i][j];
-                            vetor[2] = i;
-                        }
-                    } else {
-                        printf("ERROR\n");
-                    }
-                }
-            }
-        }
-    }
-
 
     //Imprimir na tela a matriz//
     printf("MATRIZ DAS NOTAS:\n");
@@ -65,8 +31,24 @@ int main(){
     }
     printf("\n");
 
-    
 
+     for(i = 0, j = 0; j < 0; j++) {
+        vetor[j] = matriz_notas[i][j];
+    }
+
+    //Calcular a pior nota de cada aluno//
+    for(j = 0; j < 3; j++) {
+        for(i = 0; i < 10; i++) {
+            if(matriz_notas[i][j] < vetor[j]) {
+                vetor[j] = matriz_notas[i][j];
+            }
+        }
+    }
+    printf("\n");
+
+    for(i = 0; i < 3; i++) {
+        printf("%d\n",vetor[i]);
+    }
     system("pause");
     return 0;
 }
