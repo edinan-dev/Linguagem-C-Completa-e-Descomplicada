@@ -19,10 +19,11 @@ int main(){
             scanf("%d",&matriz_notas[i][j]);
         }
     }
-
+    printf("\n");
    
 
     //Exibe a matriz de notas//
+    printf("Tabela de Notas");
     for(i = 0; i < 10; i++) {
         printf("Aluno %d",i + 1);
         printf("\n");
@@ -37,25 +38,51 @@ int main(){
         vetor_notas[j] = matriz_notas[0][j];
     }
 
-    //Calcula a pior nota de cada prova//
+    //Limpa o vetor de alunos
     for(j = 0; j < 3; j++) {
-        for(i = 0; i < 10; i++) {
-            if(matriz_notas[i][j] < vetor_notas[j]) {
-                vetor_notas[j] = matriz_notas[i][j];
-                vetor_alunos[j] = i + 1;
+        vetor_alunos[j] = NULL;
+    }
+
+    //Retorna a pior nota de cada prova e o id do aluno//
+    for(i = 0; i < 10; i++) {
+        for(j = 0; j < 3; j++) {
+            if(j == 0) {
+                if(matriz_notas[i][j] < vetor_notas[j]) {
+                    vetor_notas[j] = matriz_notas[i][j];
+                    vetor_alunos[j] = i;
+                }
+            }
+            else{
+                if(j == 1) {
+                    if(matriz_notas[i][j] < vetor_notas[j]) {
+                     vetor_notas[j] = matriz_notas[i][j];
+                     vetor_alunos[j] = i;
+                    }
+                }
+                else{
+                    if(j == 2) {
+                        if(matriz_notas[i][j] < vetor_notas[j]) {
+                         vetor_notas[j] = matriz_notas[i][j];
+                         vetor_alunos[j] = i;
+                         }
+                    }
+                    else {
+                        printf("error");
+                        break;
+                    }
+                }
             }
         }
     }
+    printf("\n");
 
+    //Exibe a pior nota de cada prova e o ID do aluno//
+    printf("RESULTADO\n");
     for(i = 0; i < 3; i++) {
-        printf("%d", vetor_notas[i]);
+        printf("Pior nota da prova %d: %d, ID do aluno: %d",i + 1, vetor_notas[i], vetor_alunos[i] + 1);
         printf("\n");
     }
 
-    for(i = 0; i < 3; i++) {
-        printf("%d", vetor_alunos[i]);
-        printf("\n");
-    }
     system("pause");
     return 0;
 }
