@@ -37,17 +37,15 @@ int main(){
             if((i == j) || (i + j == 4)) {
                 soma_diagonais = soma_diagonais + matriz[i][j];
             }
-            else {
+            else{
                 soma_nao_diagonais = soma_nao_diagonais + matriz[i][j];
             }
         }
     }
     printf("\n");
-    printf("%d\n",soma_diagonais);
-    printf("%d\n",soma_nao_diagonais);
 
     //Exibe o resultado na tela//
-    printf("A diferença da soma dos valores das diagonais pelos valore que nao estao nas diagonais e: %d\n",soma_diagonais - soma_nao_diagonais);
+    printf("A diferenca da soma dos valores das diagonais pelos valore que nao estao nas diagonais e: %d\n",soma_diagonais - soma_nao_diagonais);
 
     system("pause");
     return 0;
