@@ -7,25 +7,20 @@ e imprima quantos caracteres ela possui.*/
 
 int main(){
 
-    char str[50];
-    int i, caractere = 0;
+    char str[20];
+    int i, indice;
 
     //Ler a string str//
     printf("Digite um a frase: ");
     gets(str);
-
     for(i = 0; i < sizeof(str); i++) {
-        if(str[i] == '\0') {
-            break;
-        }
-        else{
-            if(str[i] != ' ') {
-                caractere++;
-            }
-        }
+       
     }
 
-    printf("Numero de caracteres: %d\n", caractere);
+    for(;indice >=0; indice--) {
+        printf("%c",str[indice]);
+    }
+    printf("\n");
 
     system("pause");
     return 0;
