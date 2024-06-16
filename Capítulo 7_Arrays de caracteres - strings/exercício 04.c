@@ -8,18 +8,17 @@ e imprima quantos caracteres ela possui.*/
 int main(){
 
     char str[20];
-    int i, indice;
+    int i;
 
     //Ler a string str//
     printf("Digite um a frase: ");
     gets(str);
-    for(i = 0; i < sizeof(str); i++) {
-       
+    
+    //Imprime a string ao contrário//
+    for(i = strlen(str); i >= 0; i--) {
+        printf("%c",str[i]);
     }
 
-    for(;indice >=0; indice--) {
-        printf("%c",str[indice]);
-    }
     printf("\n");
 
     system("pause");
