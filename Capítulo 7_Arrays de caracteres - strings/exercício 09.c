@@ -1,5 +1,5 @@
 /*Construa um programa que leia duas strings do teclado. Imprima uma
-mensagem informando se a segunda string está contida dentro da primeira.*/
+mensagem informando quantas vezes a segunda string está contida dentro da primeira.*/
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -26,24 +26,16 @@ int main(){
         while ((str_1[j] != '\0') && (str_1[i + j] == str_2[j])) {
             j++;
             if(str_2[j] == '\0') {
-                encontrado = 1;
+                encontrado++;
                 break;
             }
         }
-        if(encontrado) {
-            break;
-        }
-        
+                
         j = 0;
         i++;
     }
 
-    if(encontrado == 1) {
-        printf("String encontrada\n");
-    }
-    else {
-        printf("String nao encontrada\n");
-    }
+    printf("A palavra: %s, aparece %d vez(es)\n",str_2, encontrado);
     system("pause");
     return 0;
 } 
