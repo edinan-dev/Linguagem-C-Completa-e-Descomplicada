@@ -41,10 +41,11 @@ int main(){
         double lado1, lado2;
 
         //Calcula o tamanho de cada lado do retângulo
-        lado1 = (pse.ponto.y)-(psd.ponto.x);
-        lado2 = (psd.ponto.x)-(pse.ponto.y);
+        lado1 = (pse.ponto.y)-(psd.ponto.y);
+        lado2 = (psd.ponto.x)-(pse.ponto.x);
 
-
+        //Calcular área do retangulo
+        printf("Area do retangulo: %.2f\n", lado1*lado2);
     }
     else{
         printf("Impossivel criar um retangulo com essas coordenadas.\nExecute novamente.\n");
