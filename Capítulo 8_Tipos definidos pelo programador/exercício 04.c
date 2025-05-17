@@ -18,8 +18,8 @@ struct retangulo {
 
 int main(){
     
-    struct retangulo pse;
-    struct retangulo psd;
+    struct retangulo pse; //Ponto superior direito
+    struct retangulo psd;// Ponto superior esquerdo
 
     //Ler as coordenadas digitadas pelo usuário.
     printf("Ponto Superior Esquerdo:\n");
@@ -37,12 +37,12 @@ int main(){
     scanf("%lf",&psd.ponto.y);
 
     //Verificar se com as coordenadas digitadas pelo usuário é possível fazer um retângulo.
-    if(pse.ponto.y == psd.ponto.y){
+    if((pse.ponto.x == psd.ponto.y)&&(pse.ponto.y == psd.ponto.x)){
         double lado1, lado2;
 
         //Calcula o tamanho de cada lado do retângulo
-        lado1 = psd.ponto.y - 0;
-        lado2 = psd.ponto.x - 0;
+        lado1 = (pse.ponto.y)-(psd.ponto.x);
+        lado2 = (psd.ponto.x)-(pse.ponto.y);
 
 
     }
